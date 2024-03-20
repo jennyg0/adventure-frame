@@ -22,7 +22,7 @@ addHyperFrame('start', {
       },
     ],
     image: {
-      src: `${NEXT_PUBLIC_URL}/frame-1-forest.webp`,
+      src: `${NEXT_PUBLIC_URL}/home.webp`,
       aspectRatio: '1:1',
     },
     state: { frame: 'start' },
@@ -47,7 +47,7 @@ addHyperFrame('road', {
       },
     ],
     image: {
-      src: `${NEXT_PUBLIC_URL}/road.png`,
+      src: `${NEXT_PUBLIC_URL}/road.webp`,
       aspectRatio: '1:1',
     },
     postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
@@ -55,6 +55,81 @@ addHyperFrame('road', {
   1: 'start',
   2: 'shack',
   3: 'desert-road',
+});
+
+addHyperFrame('shack', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Go Back',
+      },
+      {
+        label: 'Door',
+      },
+      {
+        label: 'Testing',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/shack.webp`,
+      aspectRatio: '1:1',
+    },
+    input: {
+      text: 'What is the password?',
+    },
+    state: { frame: 'shack' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'road',
+  2: (text: string) => {
+    return text === 'all your base are belong to you' ? 'key' : 'shack-bad-password';
+  },
+});
+
+addHyperFrame('shack-bad-password', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Go Back',
+      },
+      {
+        label: 'Door',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/shack.webp`,
+      aspectRatio: '1:1',
+    },
+    input: {
+      text: 'Try again. What is the password?',
+    },
+    state: { frame: 'shack-bad-password' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'road',
+  2: (text: string) => {
+    return text === 'All your Base are belong to you' ? 'key' : 'shack-bad-password';
+  },
+});
+
+addHyperFrame('key', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Go Back',
+      },
+      {
+        label: 'TODO',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/key.webp`,
+      aspectRatio: '1:1',
+    },
+    state: { frame: 'key' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'shack',
 });
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {

@@ -15,11 +15,6 @@ addHyperFrame('start', {
       {
         label: 'Cave',
       },
-      {
-        action: 'link',
-        label: 'TODO',
-        target: 'https://www.google.com',
-      },
     ],
     image: {
       src: `${NEXT_PUBLIC_URL}/home.webp`,
@@ -93,7 +88,7 @@ addHyperFrame('cave-1', {
     postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
   }),
   1: 'start',
-  3: 'cave-2',
+  2: 'cave-2',
 });
 
 addHyperFrame('cave-2', {
@@ -138,9 +133,6 @@ addHyperFrame('shack', {
       },
       {
         label: 'Door',
-      },
-      {
-        label: 'Testing',
       },
     ],
     image: {
@@ -191,9 +183,6 @@ addHyperFrame('key', {
       {
         label: 'Back to Start',
       },
-      {
-        label: 'TODO',
-      },
     ],
     image: {
       src: `${NEXT_PUBLIC_URL}/key.webp`,
@@ -211,7 +200,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
-  console.log(message, 'message', isValid)
 
   if (isValid) {
     accountAddress = message.interactor.verified_accounts[0];

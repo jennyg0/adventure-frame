@@ -20,7 +20,7 @@ const frameMetadata = getFrameMetadata({
     },
   ],
   image: {
-    src: `${NEXT_PUBLIC_URL}/frame-1-forest.webp`,
+    src: `${NEXT_PUBLIC_URL}/home.webp`,
     aspectRatio: '1:1',
   },
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'HyperFrames!',
     description: 'Time is a flat circle.',
-    images: [`${NEXT_PUBLIC_URL}/frame-1-forest.webp`],
+    images: [`${NEXT_PUBLIC_URL}/home.webp`],
   },
   other: {
     ...frameMetadata,

@@ -57,7 +57,7 @@ addHyperFrame('woods-bear', {
   frame: getFrameHtmlResponse({
     buttons: [
       {
-        label: 'Go Back',
+        label: 'You see a bear, go back.',
       },
     ],
     image: {
@@ -95,7 +95,7 @@ addHyperFrame('cave-2', {
   frame: getFrameHtmlResponse({
     buttons: [
       {
-        label: 'Start Over',
+        label: 'Captured by the monster, start over.',
       },
     ],
     image: {
@@ -112,7 +112,7 @@ addHyperFrame('desert-road', {
   frame: getFrameHtmlResponse({
     buttons: [
       {
-        label: 'Go Back',
+        label: 'Too hot here, go back.',
       },
     ],
     image: {

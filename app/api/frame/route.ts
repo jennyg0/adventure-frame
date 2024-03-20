@@ -50,11 +50,84 @@ addHyperFrame('road', {
       src: `${NEXT_PUBLIC_URL}/road.webp`,
       aspectRatio: '1:1',
     },
+    state: { frame: 'road' },
     postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
   }),
   1: 'start',
   2: 'shack',
   3: 'desert-road',
+});
+
+addHyperFrame('woods-bear', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Go Back',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/bear.webp`,
+      aspectRatio: '1:1',
+    },
+      state: { frame: 'woods-bear' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'start',
+});
+
+addHyperFrame('cave-1', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Go Back',
+      },
+      {
+        label: 'Continue',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/cave1.webp`,
+      aspectRatio: '1:1',
+    },
+      state: { frame: 'cave-1' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'start',
+  3: 'cave-2',
+});
+
+addHyperFrame('cave-2', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Start Over',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/cave2.webp`,
+      aspectRatio: '1:1',
+    },
+      state: { frame: 'cave-2' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'start',
+});
+
+addHyperFrame('desert-road', {
+  frame: getFrameHtmlResponse({
+    buttons: [
+      {
+        label: 'Go Back',
+      },
+    ],
+    image: {
+      src: `${NEXT_PUBLIC_URL}/desertroad.webp`,
+      aspectRatio: '1:1',
+    },
+      state: { frame: 'desert-road' },
+    postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
+  }),
+  1: 'start',
 });
 
 addHyperFrame('shack', {
@@ -138,6 +211,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, { neynarApiKey: 'NEYNAR_ONCHAIN_KIT' });
+  console.log(message, 'message', isValid)
 
   if (isValid) {
     accountAddress = message.interactor.verified_accounts[0];

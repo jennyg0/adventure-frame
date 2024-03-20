@@ -127,7 +127,7 @@ addHyperFrame('desert-road', {
       state: { frame: 'desert-road' },
     postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
   }),
-  1: 'start',
+  1: 'road',
 });
 
 addHyperFrame('shack', {
@@ -189,7 +189,7 @@ addHyperFrame('key', {
   frame: getFrameHtmlResponse({
     buttons: [
       {
-        label: 'Go Back',
+        label: 'Back to Start',
       },
       {
         label: 'TODO',

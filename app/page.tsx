@@ -5,32 +5,34 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Story time',
+      label: 'Road',
     },
     {
-      action: 'tx',
-      label: 'Send Base Sepolia',
-      target: `${NEXT_PUBLIC_URL}/api/tx`,
-      postUrl: `${NEXT_PUBLIC_URL}/api/tx-success`,
+      label: 'Woods',
+    },
+    {
+      label: 'Cave',
+    },
+    {
+      action: 'link',
+      label: 'TODO',
+      target: 'https://www.google.com',
     },
   ],
   image: {
-    src: `${NEXT_PUBLIC_URL}/park-3.png`,
+    src: `${NEXT_PUBLIC_URL}/frame-1-forest.webp`,
     aspectRatio: '1:1',
-  },
-  input: {
-    text: 'Tell me a story',
   },
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
-  title: 'zizzamia.xyz',
-  description: 'LFG',
+  title: 'HyperFrames!',
+  description: 'Time is a flat circle.',
   openGraph: {
-    title: 'zizzamia.xyz',
-    description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+    title: 'HyperFrames!',
+    description: 'Time is a flat circle.',
+    images: [`${NEXT_PUBLIC_URL}/frame-1-forest.webp`],
   },
   other: {
     ...frameMetadata,

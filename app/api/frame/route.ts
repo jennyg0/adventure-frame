@@ -191,7 +191,7 @@ addHyperFrame('key', {
     state: { frame: 'key' },
     postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
   }),
-  1: 'shack',
+  1: 'start',
 });
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {

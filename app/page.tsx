@@ -13,11 +13,6 @@ const frameMetadata = getFrameMetadata({
     {
       label: 'Cave',
     },
-    {
-      action: 'link',
-      label: 'TODO',
-      target: 'https://www.google.com',
-    },
   ],
   image: {
     src: `${NEXT_PUBLIC_URL}/home.webp`,

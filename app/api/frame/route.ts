@@ -181,7 +181,7 @@ addHyperFrame('key', {
   frame: getFrameHtmlResponse({
     buttons: [
       {
-        label: 'Back to Start',
+        label: 'You unlocked the door. Restart.',
       },
     ],
     image: {
